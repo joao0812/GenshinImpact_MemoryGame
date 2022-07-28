@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(../assets/mondstadf.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.gameBoard {
+    margin-top: 150px;
+    max-width: 700px;
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+    gap: 15px;
+}
+
+.card {
+    width: 130px;
+    height: 150px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform .6s;
+}
+.card_front, .card_back {
+    border-radius: 15px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.45);
+    backface-visibility: hidden;
+
+}
+.card_front {
+    transform: rotateY(180deg);
+}
+.card_back {
+    background: linear-gradient(125deg, #ce9049, #D08737);
+}
+.front {
+    width: 100%;
+    
+}
+.back {
+    width: 55%;
+}
+
+.flip {
+    transform: rotateY(180deg);
+}
+
+
+.gameOver {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    font-size: 30px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    top: 0;
+}
+.restart {
+    padding: 15px;
+    background-color: yellow;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
